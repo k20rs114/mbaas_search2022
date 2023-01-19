@@ -144,6 +144,17 @@
                 })
         }
 
+        function searchPrice() {
+            let price = parseInt($("#price").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .equalTo("price", price)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
 
         function showResults(results) {
             // テーブルのヘッダを生成
