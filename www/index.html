@@ -67,6 +67,17 @@
                 })
         }
 
+        function searchAttackLT() {
+            let attack = parseInt($("#attack").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .lessThan("attack", attack)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function searchAttack() {
             let attack = parseInt($("#attack").val());
             let TestDataClass = ncmb.DataStore(db);
@@ -77,6 +88,7 @@
                     showResults(results);
                 })
         }
+
 
         function showResults(results) {
             // テーブルのヘッダを生成
