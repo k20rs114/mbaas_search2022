@@ -34,6 +34,17 @@
                 })
         }
 
+         function searchAttribute() {
+            let attribute = $("#attribute").val();
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .equalTo("attribute", attribute)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function searchLevelLT() {
             let level = parseInt($("#level").val());
             let TestDataClass = ncmb.DataStore(db);
@@ -142,7 +153,7 @@
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
         <button class="btn" onclick="searchName()">Name</button>
-        <button class="btn" onclick="searchName()">Attribute</button>
+        <button class="btn" onclick="searchAttribute()">Attribute</button>
         <br>
         <button class="btn" onclick="searchLevelLT()">Level &lt</button>
         <button class="btn" onclick="searchLevel()">Level</button>
