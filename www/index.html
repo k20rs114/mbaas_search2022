@@ -68,7 +68,7 @@
         }
 
         function searchAttack() {
-            let level = parseInt($("#attack").val());
+            let attack = parseInt($("#attack").val());
             let TestDataClass = ncmb.DataStore(db);
             TestDataClass
                 .equalTo("attack", attack)
@@ -106,6 +106,10 @@
     <div>
         <label for="level">level:</label>
         <input id="level" type="number" placeholder="monster level">
+    </div>
+    <div>
+        <label for="attack">attack:</label>
+        <input id="attack" type="number" placeholder="monster attack">
     </div>
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
