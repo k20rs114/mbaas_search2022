@@ -144,6 +144,17 @@
                 })
         }
 
+        function searchPriceLT() {
+            let price = parseInt($("#price").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .lessThan("price", price)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function searchPrice() {
             let price = parseInt($("#price").val());
             let TestDataClass = ncmb.DataStore(db);
