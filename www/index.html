@@ -166,6 +166,18 @@
                 })
         }
 
+        function searchPriceGT() {
+            let price = parseInt($("#price").val(), 10);
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .greaterThan("price", price)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+
 
         function showResults(results) {
             // テーブルのヘッダを生成
